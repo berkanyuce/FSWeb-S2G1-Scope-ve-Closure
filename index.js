@@ -100,16 +100,24 @@ Aşağıdaki macSonucu() fonksiyonununda aşağıdakileri yapınız:
 
 function macSonucu(skorUret, devre){
   /*Kodunuzu buraya yazınız*/
-  let evSahibi = skorUret();
-  let konukTakim = skorUret();
+  let evSahibi = 0;
+  let konukTakim = 0;
+  let evDevreSkoru;  
+  let konukDevreSkoru;
+  for (let i = 0; i < devre; i++){
+    evDevreSkoru = skorUret();
+    konukDevreSkoru = skorUret();
+    evSahibi += evDevreSkoru;
+    konukTakim += konukDevreSkoru;
+  }
   let sonuc = {
     EvSahibi : evSahibi,
     KonukTakim : konukTakim
   }
   return sonuc;
 }
-console.log(macSonucu(takimSkoru, 4))
-
+//console.log(macSonucu(takimSkoru, 4))
+//
 
 
 
@@ -136,7 +144,7 @@ function periyotSkoru(takimSkoru) {
   }
   return sonuc;
 }
-console.log(periyotSkoru(takimSkoru))
+//console.log(periyotSkoru(takimSkoru))
 
 
 
@@ -199,7 +207,7 @@ function skorTabelasi(periyotSkoru, takimSkoru, devre) {
   sonuc.push(`Maç Sonucu: Ev Sahibi ${evSahibi} - Konuk Takım ${konukTakim}`)
   return sonuc;
 }
-console.log(skorTabelasi(periyotSkoru,takimSkoru,4))
+//console.log(skorTabelasi(periyotSkoru,takimSkoru,4))
 
 //skorTabelasi(periyotSkoru,takimSkoru,4)
 
